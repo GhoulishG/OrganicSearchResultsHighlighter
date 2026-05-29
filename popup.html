@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Organic Results Highlighter</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Header -->
+    <header class="app-header">
+      <div class="logo-area">
+        <div class="logo-icon-wrapper">
+          <svg class="logo-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M15.24 2.8a2.5 2.5 0 00-3.53 0L3.13 11.38c-.37.37-.53.9-.43 1.41l.73 3.65c.08.38.3.71.62.92l4.9 3.27a1.5 1.5 0 001.66 0l4.9-3.27c.32-.21.54-.54.62-.92l.73-3.65c.1-.5-.06-1.04-.43-1.41l-1.6-1.6L20 4.76c.55-.55.55-1.44 0-2l-2.76-2.76a1.41 1.41 0 00-2 0z" fill="url(#logo-grad)"/>
+            <path d="M7 17l1.5-1.5M10 14l1.5-1.5M4.5 15.5l1.5-1.5" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+            <defs>
+              <linearGradient id="logo-grad" x1="2.7" y1="2.8" x2="20" y2="20" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#60a5fa"/>
+                <stop offset="1" stop-color="#3b82f6"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+        <div class="logo-text">
+          <h1>Organic Results</h1>
+          <p class="tagline">Search Page Highlighter</p>
+        </div>
+      </div>
+      
+      <!-- Power Toggle -->
+      <div class="toggle-wrapper">
+        <label class="switch" for="power-toggle">
+          <input type="checkbox" id="power-toggle" checked>
+          <span class="slider round"></span>
+        </label>
+      </div>
+    </header>
+
+    <!-- Main Card (Glassmorphism) -->
+    <main class="main-content">
+      <!-- Active Status Panel -->
+      <div class="status-card" id="status-card">
+        <div class="status-info">
+          <span class="status-label">Status</span>
+          <span class="status-value active" id="status-text">Active</span>
+        </div>
+        <div class="counter-display">
+          <div class="counter-number-wrapper">
+            <span id="highlight-count" class="counter-number">0</span>
+            <span class="pulse-indicator"></span>
+          </div>
+          <span class="counter-label">results highlighted</span>
+        </div>
+      </div>
+
+      <!-- Color Palette Selection -->
+      <div class="section-container">
+        <h2>Pastel Color Theme</h2>
+        <div class="color-palette">
+          <button class="color-bubble active" data-color="blue" style="--bubble-color: #d0e1fd; --glow-color: #60a5fa;" aria-label="Pastel Blue"></button>
+          <button class="color-bubble" data-color="purple" style="--bubble-color: #ede9fe; --glow-color: #a78bfa;" aria-label="Pastel Purple"></button>
+          <button class="color-bubble" data-color="green" style="--bubble-color: #dcfce7; --glow-color: #4ade80;" aria-label="Pastel Green"></button>
+          <button class="color-bubble" data-color="pink" style="--bubble-color: #fce7f3; --glow-color: #f472b6;" aria-label="Pastel Pink"></button>
+        </div>
+      </div>
+
+      <!-- Quick Action Options -->
+      <div class="actions-row">
+        <button id="btn-flash" class="action-btn secondary-btn" title="Flashes highlighted results on the page to verify them">
+          <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+          Verify Scan
+        </button>
+        <button id="btn-settings-toggle" class="action-btn icon-btn" title="Advanced CSS Selectors">
+          <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+        </button>
+      </div>
+
+      <!-- Advanced Settings Panel (Hidden by default) -->
+      <div id="settings-panel" class="settings-panel collapsed">
+        <div class="panel-header">
+          <h3>Advanced Selector Settings</h3>
+          <button id="btn-reset" class="text-btn">Reset Default</button>
+        </div>
+        <p class="panel-desc">Modify the CSS selectors if search engines change their structure.</p>
+        <div class="input-group">
+          <textarea id="selector-input" rows="2" placeholder="e.g. #rso .g, #rso .MjjYud"></textarea>
+          <span class="input-hint">Separate multiple selectors with commas</span>
+        </div>
+        <button id="btn-save-selectors" class="primary-btn full-width">Apply Selector</button>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="app-footer">
+      <span>Works on Google & Bing</span>
+      <span>v1.0.0</span>
+    </footer>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
